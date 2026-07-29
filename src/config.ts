@@ -71,12 +71,12 @@ export const ENDPOINTS = {
   waitlist: "",
 };
 
-import poolAerial from "@/assets/mm-phuket-pool.avif.asset.json";
-import poolVolley from "@/assets/mm-phuket-pool-volley.avif.asset.json";
-import barPour from "@/assets/mm-phuket-bar.avif.asset.json";
-import heroCrowd from "@/assets/hero-crowd.png.asset.json";
-import day2Shuttle from "@/assets/day2-shuttle.png.asset.json";
-import day3Patong from "@/assets/day3-patong.png.asset.json";
+import poolAerial from "@/assets/mm-phuket-pool.avif";
+import poolVolley from "@/assets/mm-phuket-pool-volley.avif";
+import barPour from "@/assets/mm-phuket-bar.avif";
+import heroCrowd from "@/assets/hero-crowd.png";
+import day2Shuttle from "@/assets/day2-shuttle.png";
+import day3Patong from "@/assets/day3-patong.png";
 
 export const GALLERY: {
   file: string;
@@ -84,14 +84,14 @@ export const GALLERY: {
   alt: string;
   url?: string;
 }[] = [
-  { file: "01-crowd.jpg", brief: "Crowd, front of stage, 2026 Phuket edition — hands up, lasers, sweat", alt: "DnB Allstars Phuket crowd", url: heroCrowd.url },
-  { file: "02-pool.jpg", brief: "Mad Monkey Phuket pool, people in it, mid-afternoon, not empty", alt: "Mad Monkey Phuket pool, aerial", url: poolAerial.url },
-  { file: "03-patong-night.jpg", brief: "Patong at night, neon, wet street, motion blur", alt: "Patong at night", url: day3Patong.url },
+  { file: "01-crowd.jpg", brief: "Crowd, front of stage, 2026 Phuket edition — hands up, lasers, sweat", alt: "DnB Allstars Phuket crowd", url: heroCrowd },
+  { file: "02-pool.jpg", brief: "Mad Monkey Phuket pool, people in it, mid-afternoon, not empty", alt: "Mad Monkey Phuket pool, aerial", url: poolAerial },
+  { file: "03-patong-night.jpg", brief: "Patong at night, neon, wet street, motion blur", alt: "Patong at night", url: day3Patong },
   { file: "04-stage.jpg", brief: "Main stage wide, dusk into night, CO2 jets", alt: "Main stage" },
-  { file: "05-shuttle.jpg", brief: "The shuttle, people boarding, wristbands on, going out", alt: "Shuttle boarding", url: day2Shuttle.url },
-  { file: "06-rooftop.jpg", brief: "Rooftop bar, pre-party, DJ and a full deck", alt: "Mad Monkey Phuket bar", url: barPour.url },
+  { file: "05-shuttle.jpg", brief: "The shuttle, people boarding, wristbands on, going out", alt: "Shuttle boarding", url: day2Shuttle },
+  { file: "06-rooftop.jpg", brief: "Rooftop bar, pre-party, DJ and a full deck", alt: "Mad Monkey Phuket bar", url: barPour },
   { file: "07-sunrise.jpg", brief: "Sunrise on the beach, the walk home, silhouettes", alt: "Sunrise walk home" },
-  { file: "08-dorm.jpg", brief: "Dorm room, beds, balcony light, made up and clean", alt: "Mad Monkey Phuket pool volleyball", url: poolVolley.url },
+  { file: "08-dorm.jpg", brief: "Dorm room, beds, balcony light, made up and clean", alt: "Mad Monkey Phuket pool volleyball", url: poolVolley },
 ];
 
 export const COPY = {

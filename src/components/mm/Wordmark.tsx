@@ -1,5 +1,4 @@
-import mmMonkeyAsset from "@/assets/mm-monkey-head.png.asset.json";
-const mmMonkey = mmMonkeyAsset.url;
+import mmMonkey from "@/assets/mm-monkey-head.png";
 
 // Mad Monkey wordmark — used exactly as supplied, no filter.
 export function Wordmark({ className = "", width = 130 }: { className?: string; width?: number; tone?: "white" | "ink" }) {
