@@ -81,14 +81,9 @@ export const GALLERY: {
   alt: string;
   url?: string;
 }[] = [
-  { file: "01-crowd.jpg", brief: "Crowd, front of stage, 2026 Phuket edition — hands up, lasers, sweat", alt: "DnB Allstars Phuket crowd" },
-  { file: "02-pool.jpg", brief: "Mad Monkey Phuket pool, people in it, mid-afternoon, not empty", alt: "Mad Monkey Phuket pool, aerial", url: poolAerial.url },
-  { file: "03-patong-night.jpg", brief: "Patong at night, neon, wet street, motion blur", alt: "Patong at night" },
-  { file: "04-stage.jpg", brief: "Main stage wide, dusk into night, CO2 jets", alt: "Main stage" },
-  { file: "05-shuttle.jpg", brief: "The shuttle, people boarding, wristbands on, going out", alt: "Shuttle boarding" },
-  { file: "06-rooftop.jpg", brief: "Rooftop bar, pre-party, DJ and a full deck", alt: "Mad Monkey Phuket bar", url: barPour.url },
-  { file: "07-sunrise.jpg", brief: "Sunrise on the beach, the walk home, silhouettes", alt: "Sunrise walk home" },
-  { file: "08-dorm.jpg", brief: "Dorm room, beds, balcony light, made up and clean", alt: "Mad Monkey Phuket pool volleyball", url: poolVolley.url },
+  { file: "01-pool.jpg", brief: "Mad Monkey Phuket pool, aerial", alt: "Mad Monkey Phuket pool, aerial", url: poolAerial.url },
+  { file: "02-bar.jpg", brief: "Rooftop bar, pre-party", alt: "Mad Monkey Phuket bar", url: barPour.url },
+  { file: "03-volley.jpg", brief: "Pool volleyball", alt: "Mad Monkey Phuket pool volleyball", url: poolVolley.url },
 ];
 
 export const COPY = {
