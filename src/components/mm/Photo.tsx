@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GALLERY } from "@/config";
 
 type Props = {
@@ -14,13 +14,23 @@ type Props = {
 // it's obvious which image belongs where.
 export function Photo({ slot, className = "", quiet = false, alt, onClick }: Props) {
   const [failed, setFailed] = useState(false);
+  const imgRef = useRef<HTMLImageElement | null>(null);
   const item = GALLERY[slot - 1];
+
+  // Catch images that already errored before hydration (SSR-rendered <img>).
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) return;
+    if (img.complete && img.naturalWidth === 0) setFailed(true);
+  }, []);
+
   if (!item) return null;
   const path = `/gallery/${item.file}`;
 
   if (!failed) {
     return (
       <img
+        ref={imgRef}
         src={path}
         alt={alt ?? item.alt}
         onClick={onClick}
