@@ -74,6 +74,7 @@ export const ENDPOINTS = {
 import poolAerial from "@/assets/mm-phuket-pool.avif.asset.json";
 import poolVolley from "@/assets/mm-phuket-pool-volley.avif.asset.json";
 import barPour from "@/assets/mm-phuket-bar.avif.asset.json";
+import heroCrowd from "@/assets/hero-crowd.png.asset.json";
 
 export const GALLERY: {
   file: string;
@@ -81,7 +82,7 @@ export const GALLERY: {
   alt: string;
   url?: string;
 }[] = [
-  { file: "01-crowd.jpg", brief: "Crowd, front of stage, 2026 Phuket edition — hands up, lasers, sweat", alt: "DnB Allstars Phuket crowd" },
+  { file: "01-crowd.jpg", brief: "Crowd, front of stage, 2026 Phuket edition — hands up, lasers, sweat", alt: "DnB Allstars Phuket crowd", url: heroCrowd.url },
   { file: "02-pool.jpg", brief: "Mad Monkey Phuket pool, people in it, mid-afternoon, not empty", alt: "Mad Monkey Phuket pool, aerial", url: poolAerial.url },
   { file: "03-patong-night.jpg", brief: "Patong at night, neon, wet street, motion blur", alt: "Patong at night" },
   { file: "04-stage.jpg", brief: "Main stage wide, dusk into night, CO2 jets", alt: "Main stage" },
