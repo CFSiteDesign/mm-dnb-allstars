@@ -121,13 +121,14 @@ function Hero({ onCTA }: { onCTA: () => void }) {
         <div className="absolute inset-0 hero-wash" />
 
         {/* Centered DnB Allstars logo */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
+        <div className="absolute inset-x-0 top-[18%] z-10 flex justify-center pointer-events-none px-4 sm:top-[20%]">
           <img
             src={dnbAllstarsLogo}
             alt="DnB Allstars"
-            className="w-[85%] max-w-[900px] h-auto drop-shadow-[6px_6px_0_rgba(0,0,0,0.6)]"
+            className="w-[55%] max-w-[460px] h-auto drop-shadow-[4px_4px_0_rgba(0,0,0,0.55)]"
           />
         </div>
+
 
         {/* Bottom-left lockup */}
         <div className="absolute inset-x-0 bottom-0 z-10">
