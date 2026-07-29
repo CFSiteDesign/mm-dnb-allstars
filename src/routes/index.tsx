@@ -5,6 +5,7 @@ import { Photo } from "@/components/mm/Photo";
 import { Wordmark } from "@/components/mm/Wordmark";
 import { Roundel } from "@/components/mm/Roundel";
 import { CheckoutModal } from "@/components/mm/Checkout";
+import dnbAllstarsLogo from "@/assets/dnb-allstars-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
