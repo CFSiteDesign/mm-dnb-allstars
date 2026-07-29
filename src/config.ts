@@ -10,9 +10,9 @@ export const BRAND = {
   email: "cs@madmonkeyhostels.com",
   siteLinks: {
     ourStory: "https://madmonkeyhostels.com/our-story",
-    hostels: "https://madmonkeyhostels.com/hostels",
-    experience: "https://madmonkeyhostels.com/experience",
-    madLoyalty: "https://madmonkeyhostels.com/mad-loyalty",
+    hostels: "https://madmonkeyhostels.com/destination",
+    experience: "https://madmonkeyhostels.com/tours-events",
+    madLoyalty: "https://madmonkeyhostels.com/madloyalty",
   },
 };
 
