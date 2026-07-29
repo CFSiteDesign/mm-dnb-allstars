@@ -47,7 +47,7 @@ function Page() {
             </div>
 
             <aside className="order-1 lg:order-2 lg:col-span-4">
-              <div className="mt-6 lg:sticky lg:top-8 lg:-mt-40 lg:z-30">
+              <div className="mt-6 lg:sticky lg:top-8 lg:mt-8 lg:z-30">
                 <PriceRail onCTA={openCheckout} />
               </div>
             </aside>
