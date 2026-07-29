@@ -225,7 +225,7 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? errId : undefined}
-        className={`block w-full border-[3px] bg-paper px-3 py-3 text-ink outline-none ${error ? "border-[#ff3d6e]" : "border-ink"} focus:border-yellow`}
+        className={`block w-full border-[3px] bg-paper px-3 py-3 text-ink outline-none ${error ? "border-[#ff01aa]" : "border-ink"} focus:border-yellow`}
         style={{ fontSize: 16 }}
       />
       {error && <div id={errId} className="mt-1 text-xs text-[#ff3d6e]">{error}</div>}
