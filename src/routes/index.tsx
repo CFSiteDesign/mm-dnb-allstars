@@ -113,22 +113,11 @@ function Header({ onCTA }: { onCTA: () => void }) {
 
 /* ---------------- HERO ---------------- */
 function Hero({ onCTA }: { onCTA: () => void }) {
-  const [heroSlot, setHeroSlot] = useState(1);
-  const rail = [1, 4, 3, 6, 7];
   return (
     <section className="relative isolate">
       <div className="relative h-[80vh] w-full overflow-hidden lg:h-[92vh]">
-        <Photo slot={heroSlot} quiet />
+        <Photo slot={1} quiet />
         <div className="absolute inset-0 hero-wash" />
-
-        {/* Desktop thumbnail rail */}
-        <div className="absolute right-6 top-24 z-10 hidden flex-col gap-3 lg:flex">
-          {rail.map((s) => (
-            <button key={s} onClick={() => setHeroSlot(s)} aria-label={`View photo ${s}`} className={`h-20 w-28 overflow-hidden border-ink hard-shadow-sm cta-press ${heroSlot === s ? "outline-4 outline-yellow" : ""}`}>
-              <Photo slot={s} quiet />
-            </button>
-          ))}
-        </div>
 
         {/* Bottom-left lockup */}
         <div className="absolute inset-x-0 bottom-0 z-10">
@@ -153,20 +142,10 @@ function Hero({ onCTA }: { onCTA: () => void }) {
           </div>
         </div>
       </div>
-
-      {/* Mobile scrolling thumbnail strip */}
-      <div className="lg:hidden">
-        <div className="flex gap-3 overflow-x-auto border-ink-bottom bg-deep-1 px-4 py-3">
-          {rail.map((s) => (
-            <button key={s} onClick={() => setHeroSlot(s)} aria-label={`View photo ${s}`} className={`h-16 w-24 shrink-0 overflow-hidden border-ink hard-shadow-sm cta-press ${heroSlot === s ? "outline-4 outline-yellow" : ""}`}>
-              <Photo slot={s} quiet />
-            </button>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
+
 
 function Chip({ children }: { children: React.ReactNode }) {
   return <span className="tracked inline-block border-[3px] border-bone/80 px-3 py-1.5 text-bone">{children}</span>;
