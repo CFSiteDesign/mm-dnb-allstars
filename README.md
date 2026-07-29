@@ -119,6 +119,13 @@ PARTNER STRIP — deep blue band, 3px black top and bottom borders. Left: "BROUG
 FOOTER — big display line "8 spots. / Then that's it." (second line yellow), the location and dates, a yellow CTA, the rotating Mad Monkey Thailand roundel to the right, then a divider with the contact email, the Instagram handle, a copyright line, and the Mad Monkey wordmark bottom-right.
 
 =========================
+IMAGES — PORTABILITY RULE (READ THIS)
+=========================
+This site is deployed OUTSIDE Lovable (madmonkeyhostels.com/events/dnb-all-stars). Every image the site uses MUST be a real binary file committed to `src/assets/` and imported directly (`import x from "@/assets/foo.png"`) so Vite hashes and bundles it. Do NOT commit `.asset.json` pointer stubs — their `/__l5e/assets-v1/...` URLs only resolve on Lovable's own runtime and 404 everywhere else, breaking every image on the live site.
+
+The Lovable uploader creates pointer stubs by default. If you upload through it, immediately download the real binary into `src/assets/`, delete the `.asset.json`, and switch the import to the file. `mm-allin.png` in `Roundel.tsx` is the working pattern — copy it.
+
+=========================
 GALLERY / IMAGE PLACEHOLDERS
 =========================
 There are 8 photo slots and no photos yet. Build a <Photo> component that tries /gallery/<filename> and, on error, renders a branded deep-blue placeholder instead — an inline SVG of a dusk horizon with palm silhouettes and a soft yellow sun, plus a "PHOTO SLOT" label and a caption bar showing that slot's shot brief and its exact file path. Add a `quiet` prop that renders artwork only, with no text, used for the full-bleed hero and for the small thumbnails so the placeholder never fights the headline. This way nothing looks broken and it's obvious what image belongs where.
