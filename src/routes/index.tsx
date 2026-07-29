@@ -114,7 +114,7 @@ function Header({ onCTA }: { onCTA: () => void }) {
 /* ---------------- HERO ---------------- */
 function Hero({ onCTA }: { onCTA: () => void }) {
   const [heroSlot, setHeroSlot] = useState(1);
-  const rail = [1, 4, 3, 6, 7];
+  const rail = [1, 2, 3];
   return (
     <section className="relative isolate">
       <div className="relative h-[80vh] w-full overflow-hidden lg:h-[92vh]">
