@@ -114,7 +114,7 @@ function Header({ onCTA }: { onCTA: () => void }) {
 /* ---------------- HERO ---------------- */
 function Hero({ onCTA }: { onCTA: () => void }) {
   const [heroSlot, setHeroSlot] = useState(1);
-  const rail = [1, 4, 3, 6, 7];
+  const rail = [1, 2, 3];
   return (
     <section className="relative isolate">
       <div className="relative h-[80vh] w-full overflow-hidden lg:h-[92vh]">
@@ -402,10 +402,10 @@ function Accommodation({ onCTA }: { onCTA: () => void }) {
       <SectionHead id="accommodation" eyebrow="The accommodation" title="Mad Monkey Phuket" />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="flex flex-col gap-4">
-          <div className="h-56 border-ink hard-shadow"><Photo slot={2} quiet /></div>
+          <div className="h-56 border-ink hard-shadow"><Photo slot={1} quiet /></div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="h-36 border-ink hard-shadow-sm"><Photo slot={8} quiet /></div>
-            <div className="h-36 border-ink hard-shadow-sm"><Photo slot={6} quiet /></div>
+            <div className="h-36 border-ink hard-shadow-sm"><Photo slot={3} quiet /></div>
+            <div className="h-36 border-ink hard-shadow-sm"><Photo slot={2} quiet /></div>
           </div>
         </div>
         <div>
