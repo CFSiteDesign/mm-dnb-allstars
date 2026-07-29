@@ -108,10 +108,10 @@ export const COPY = {
   ],
   notIncluded: "Flights · Airport transfers · Food · Travel insurance",
   days: [
-    { day: "DAY 1", date: "Wed 21 Jan", title: "Land and settle", body: "Check in, grab your welcome drink and your festival pack. Pool's open, Patong's a four-minute walk. Take it easy — or don't.", img: 2 },
-    { day: "DAY 2", date: "Thu 22 Jan", title: "Day one, and it starts at ours", body: "Pre-party at the hostel, then the shuttle out. First day of DnB Allstars, every stage open, shuttle back when it's done. Pool bar's still going if you are.", img: 5 },
+    { day: "DAY 1", date: "Wed 21 Jan", title: "Land and settle", body: "Check in, grab your welcome drink and your festival pack. Pool's open, Patong's a four-minute walk. Take it easy — or don't.", img: 1 },
+    { day: "DAY 2", date: "Thu 22 Jan", title: "Day one, and it starts at ours", body: "Pre-party at the hostel, then the shuttle out. First day of DnB Allstars, every stage open, shuttle back when it's done. Pool bar's still going if you are.", img: 2 },
     { day: "DAY 3", date: "Fri 23 Jan", title: "The big one", body: "Pre-party from late afternoon, shuttle to the venue for the heaviest night of the weekend. Full lineup, every stage. Pace yourself. Or don't, again.", img: 3 },
-    { day: "DAY 4", date: "Sat 24 Jan", title: "Last night standing", body: "Final pre-party, final shuttle, final night. Then the walk back along the beach as it gets light. This is the one you'll tell people about.", img: 6 },
+    { day: "DAY 4", date: "Sat 24 Jan", title: "Last night standing", body: "Final pre-party, final shuttle, final night. Then the walk back along the beach as it gets light. This is the one you'll tell people about.", img: 2 },
     { day: "DAY 5", date: "Sun 25 Jan", title: "Out", body: "Check out at 11. Coffee, ferry, flight — or extend at the direct rate, just tell reception.", img: 1 },
   ],
   faq: [
