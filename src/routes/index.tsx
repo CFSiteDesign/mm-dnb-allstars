@@ -120,16 +120,18 @@ function Hero({ onCTA }: { onCTA: () => void }) {
         <Photo slot={1} quiet />
         <div className="absolute inset-0 hero-wash" />
 
+        {/* Centered DnB Allstars logo */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
+          <img
+            src={dnbAllstarsLogo}
+            alt="DnB Allstars"
+            className="w-[85%] max-w-[900px] h-auto drop-shadow-[6px_6px_0_rgba(0,0,0,0.6)]"
+          />
+        </div>
+
         {/* Bottom-left lockup */}
         <div className="absolute inset-x-0 bottom-0 z-10">
           <div className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 lg:px-8 lg:pb-16">
-            <div className="mb-6">
-              <img
-                src={dnbAllstarsLogo}
-                alt="DnB Allstars"
-                className="h-14 w-auto sm:h-20 lg:h-24"
-              />
-            </div>
             <div className="mb-4">
               <span className="inline-block sticker-allin px-4 py-2 text-lg tracking-wider">ALL IN</span>
             </div>
@@ -149,6 +151,7 @@ function Hero({ onCTA }: { onCTA: () => void }) {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
