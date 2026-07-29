@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
-import { EVENT, PRICING, ENDPOINTS, BRAND } from "@/config";
-import { createStripeCheckout } from "@/lib/checkout.functions";
+import { EVENT, PRICING, ENDPOINTS, BRAND, CHECKOUT_ORIGIN } from "@/config";
 
 // WHY we collect guest details in-app instead of leaning on Stripe:
 // a Stripe Payment Link collects only ONE set of custom fields per session
