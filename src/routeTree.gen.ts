@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PaidRouteImport } from './routes/paid'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiPublicCheckoutRouteImport } from './routes/api/public/checkout'
 import { Route as ApiPublicStripeWebhookRouteImport } from './routes/api/public/stripe/webhook'
 
 const PaidRoute = PaidRouteImport.update({
@@ -29,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicCheckoutRoute = ApiPublicCheckoutRouteImport.update({
+  id: '/api/public/checkout',
+  path: '/api/public/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicStripeWebhookRoute = ApiPublicStripeWebhookRouteImport.update({
   id: '/api/public/stripe/webhook',
   path: '/api/public/stripe/webhook',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/paid': typeof PaidRoute
+  '/api/public/checkout': typeof ApiPublicCheckoutRoute
   '/api/public/stripe/webhook': typeof ApiPublicStripeWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/paid': typeof PaidRoute
+  '/api/public/checkout': typeof ApiPublicCheckoutRoute
   '/api/public/stripe/webhook': typeof ApiPublicStripeWebhookRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,38 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/paid': typeof PaidRoute
+  '/api/public/checkout': typeof ApiPublicCheckoutRoute
   '/api/public/stripe/webhook': typeof ApiPublicStripeWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin' | '/paid' | '/api/public/stripe/webhook'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/paid'
+    | '/api/public/checkout'
+    | '/api/public/stripe/webhook'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/paid' | '/api/public/stripe/webhook'
-  id: '__root__' | '/' | '/admin' | '/paid' | '/api/public/stripe/webhook'
+  to:
+    | '/'
+    | '/admin'
+    | '/paid'
+    | '/api/public/checkout'
+    | '/api/public/stripe/webhook'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/paid'
+    | '/api/public/checkout'
+    | '/api/public/stripe/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   PaidRoute: typeof PaidRoute
+  ApiPublicCheckoutRoute: typeof ApiPublicCheckoutRoute
   ApiPublicStripeWebhookRoute: typeof ApiPublicStripeWebhookRoute
 }
 
@@ -92,6 +118,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/checkout': {
+      id: '/api/public/checkout'
+      path: '/api/public/checkout'
+      fullPath: '/api/public/checkout'
+      preLoaderRoute: typeof ApiPublicCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/stripe/webhook': {
       id: '/api/public/stripe/webhook'
       path: '/api/public/stripe/webhook'
@@ -106,6 +139,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   PaidRoute: PaidRoute,
+  ApiPublicCheckoutRoute: ApiPublicCheckoutRoute,
   ApiPublicStripeWebhookRoute: ApiPublicStripeWebhookRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
-import { EVENT, PRICING, ENDPOINTS, BRAND } from "@/config";
-import { createStripeCheckout } from "@/lib/checkout.functions";
+import { EVENT, PRICING, ENDPOINTS, BRAND, CHECKOUT_ORIGIN } from "@/config";
 
 // WHY we collect guest details in-app instead of leaning on Stripe:
 // a Stripe Payment Link collects only ONE set of custom fields per session
@@ -122,7 +120,6 @@ export function CheckoutModal({ open, onClose }: { open: boolean; onClose: () =>
     }, 30);
   };
 
-  const startCheckout = useServerFn(createStripeCheckout);
   const pay = async () => {
     setSubmitting(true);
     setNotice(null);
@@ -131,8 +128,19 @@ export function CheckoutModal({ open, onClose }: { open: boolean; onClose: () =>
       localStorage.setItem(`booking:${reference}`, JSON.stringify({ reference, quantity: qty, guests, totalUSD: total, createdAt: new Date().toISOString() }));
     } catch {}
     try {
-      const { url } = await startCheckout({ data: { quantity: qty, guests, reference } });
-      window.location.href = url;
+      const res = await fetch(`${CHECKOUT_ORIGIN}/api/public/checkout`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          quantity: qty,
+          guests,
+          reference,
+          returnOrigin: typeof window !== "undefined" ? window.location.origin : undefined,
+        }),
+      });
+      const body = (await res.json()) as { url?: string; error?: string };
+      if (!res.ok || !body.url) throw new Error(body.error ?? `Checkout failed (${res.status})`);
+      window.location.href = body.url;
     } catch (err) {
       console.error(err);
       setNotice("Payment isn't live yet. DM us on Instagram and we'll sort you out.");

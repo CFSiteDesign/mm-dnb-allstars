@@ -64,6 +64,12 @@ export const STRIPE = {
   paymentLink: "", // CONFIRM
 };
 
+// The Lovable-hosted deployment that owns the server routes (Stripe checkout,
+// webhook, admin, /paid). The marketing page can be embedded/proxied anywhere
+// (e.g. madmonkeyhostels.com/events/dnb-all-stars), but the checkout POST and
+// success/cancel URLs all point back to this origin.
+export const CHECKOUT_ORIGIN = "https://mm-dnb-allstars.lovable.app";
+
 // Optional: POST bookings and waitlist signups to your own endpoint.
 // Leave empty to skip and fall back to localStorage / mailto.
 export const ENDPOINTS = {
