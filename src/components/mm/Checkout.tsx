@@ -228,7 +228,7 @@ function Field({
         className={`block w-full border-[3px] bg-paper px-3 py-3 text-ink outline-none ${error ? "border-[#ff01aa]" : "border-ink"} focus:border-yellow`}
         style={{ fontSize: 16 }}
       />
-      {error && <div id={errId} className="mt-1 text-xs text-[#ff3d6e]">{error}</div>}
+      {error && <div id={errId} className="mt-1 text-xs text-[#ff01aa]">{error}</div>}
     </label>
   );
 }
