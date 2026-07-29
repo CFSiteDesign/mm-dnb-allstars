@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { EVENT, PRICING, STRIPE, ENDPOINTS, BRAND } from "@/config";
+import { useServerFn } from "@tanstack/react-start";
+import { EVENT, PRICING, ENDPOINTS, BRAND } from "@/config";
+import { createStripeCheckout } from "@/lib/checkout.functions";
 
 // WHY we collect guest details in-app instead of leaning on Stripe:
 // a Stripe Payment Link collects only ONE set of custom fields per session
@@ -120,29 +122,22 @@ export function CheckoutModal({ open, onClose }: { open: boolean; onClose: () =>
     }, 30);
   };
 
+  const startCheckout = useServerFn(createStripeCheckout);
   const pay = async () => {
     setSubmitting(true);
     setNotice(null);
     const reference = makeRef(guests);
-    const booking = { reference, quantity: qty, guests, totalUSD: total, createdAt: new Date().toISOString() };
     try {
-      localStorage.setItem(`booking:${reference}`, JSON.stringify(booking));
+      localStorage.setItem(`booking:${reference}`, JSON.stringify({ reference, quantity: qty, guests, totalUSD: total, createdAt: new Date().toISOString() }));
     } catch {}
-    if (ENDPOINTS.booking) {
-      try {
-        await fetch(ENDPOINTS.booking, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(booking) });
-      } catch {}
-    }
-    if (!STRIPE.paymentLink) {
+    try {
+      const { url } = await startCheckout({ data: { quantity: qty, guests, reference } });
+      window.location.href = url;
+    } catch (err) {
+      console.error(err);
       setNotice("Payment isn't live yet. DM us on Instagram and we'll sort you out.");
       setSubmitting(false);
-      return;
     }
-    const url = new URL(STRIPE.paymentLink);
-    url.searchParams.set("quantity", String(qty));
-    if (guests[0]?.email) url.searchParams.set("prefilled_email", guests[0].email);
-    url.searchParams.set("client_reference_id", reference);
-    window.location.href = url.toString();
   };
 
   if (!open) return null;
