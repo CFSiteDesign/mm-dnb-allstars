@@ -20,7 +20,7 @@ function AdminPage() {
   const router = useRouter();
   const unlock = useServerFn(adminUnlock);
   const lock = useServerFn(adminLock);
-  const [state, setState] = useState(initial);
+  const [state, setState] = useState<{ unlocked: boolean; bookings: AdminBooking[] }>(initial);
   const [error, setError] = useState(false);
   const [pw, setPw] = useState("");
   const [busy, setBusy] = useState(false);
