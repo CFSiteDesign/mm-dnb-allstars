@@ -134,7 +134,7 @@ export function CheckoutModal({ open, onClose }: { open: boolean; onClose: () =>
       } catch {}
     }
     if (!STRIPE.paymentLink) {
-      setNotice("Payment isn't wired up yet — DM us on Instagram to lock your spot and we'll invoice you today.");
+      setNotice("Payment isn't live yet. DM us on Instagram and we'll sort you out.");
       setSubmitting(false);
       return;
     }
@@ -225,10 +225,10 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? errId : undefined}
-        className={`block w-full border-[3px] bg-paper px-3 py-3 text-ink outline-none ${error ? "border-[#ff3d6e]" : "border-ink"} focus:border-yellow`}
+        className={`block w-full border-[3px] bg-paper px-3 py-3 text-ink outline-none ${error ? "border-[#ff01aa]" : "border-ink"} focus:border-yellow`}
         style={{ fontSize: 16 }}
       />
-      {error && <div id={errId} className="mt-1 text-xs text-[#ff3d6e]">{error}</div>}
+      {error && <div id={errId} className="mt-1 text-xs text-[#ff01aa]">{error}</div>}
     </label>
   );
 }
