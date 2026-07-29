@@ -134,7 +134,7 @@ export function CheckoutModal({ open, onClose }: { open: boolean; onClose: () =>
       } catch {}
     }
     if (!STRIPE.paymentLink) {
-      setNotice("Payment isn't wired up yet — DM us on Instagram to lock your spot and we'll invoice you today.");
+      setNotice("Payment isn't live yet. DM us on Instagram and we'll sort you out.");
       setSubmitting(false);
       return;
     }
