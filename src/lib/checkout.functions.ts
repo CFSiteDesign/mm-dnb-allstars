@@ -64,6 +64,8 @@ export const createStripeCheckout = createServerFn({ method: "POST" })
       ],
       metadata: { reference, quantity: String(quantity) },
       payment_intent_data: { metadata: { reference } },
+      // Force USD for every buyer regardless of IP — disable Stripe's Adaptive Pricing.
+      adaptive_pricing: { enabled: false },
       success_url: `${origin}/paid?ref=${encodeURIComponent(reference)}&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/?cancelled=1&ref=${encodeURIComponent(reference)}`,
     });
