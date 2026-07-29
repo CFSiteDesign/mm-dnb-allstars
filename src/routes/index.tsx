@@ -5,6 +5,7 @@ import { Photo } from "@/components/mm/Photo";
 import { Wordmark } from "@/components/mm/Wordmark";
 import { Roundel } from "@/components/mm/Roundel";
 import { CheckoutModal } from "@/components/mm/Checkout";
+import dnbAllstarsLogo from "@/assets/dnb-allstars-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,6 +123,13 @@ function Hero({ onCTA }: { onCTA: () => void }) {
         {/* Bottom-left lockup */}
         <div className="absolute inset-x-0 bottom-0 z-10">
           <div className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 lg:px-8 lg:pb-16">
+            <div className="mb-6">
+              <img
+                src={dnbAllstarsLogo}
+                alt="DnB Allstars"
+                className="h-14 w-auto sm:h-20 lg:h-24"
+              />
+            </div>
             <div className="mb-4">
               <span className="inline-block sticker-allin px-4 py-2 text-lg tracking-wider">ALL IN</span>
             </div>
