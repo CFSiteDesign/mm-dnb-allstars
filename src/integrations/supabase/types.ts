@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          contact_email: string
+          created_at: string
+          email_sent_at: string | null
+          guests: Json
+          id: string
+          paid_at: string | null
+          quantity: number
+          reference: string
+          status: string
+          stripe_payment_intent: string | null
+          stripe_session_id: string | null
+          total_usd: number
+          updated_at: string
+        }
+        Insert: {
+          contact_email: string
+          created_at?: string
+          email_sent_at?: string | null
+          guests: Json
+          id?: string
+          paid_at?: string | null
+          quantity: number
+          reference: string
+          status?: string
+          stripe_payment_intent?: string | null
+          stripe_session_id?: string | null
+          total_usd: number
+          updated_at?: string
+        }
+        Update: {
+          contact_email?: string
+          created_at?: string
+          email_sent_at?: string | null
+          guests?: Json
+          id?: string
+          paid_at?: string | null
+          quantity?: number
+          reference?: string
+          status?: string
+          stripe_payment_intent?: string | null
+          stripe_session_id?: string | null
+          total_usd?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
