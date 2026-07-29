@@ -25,7 +25,7 @@ export function Photo({ slot, className = "", quiet = false, alt, onClick }: Pro
   }, []);
 
   if (!item) return null;
-  const path = `/gallery/${item.file}`;
+  const path = item.url ?? `/gallery/${item.file}`;
 
   if (!failed) {
     return (
